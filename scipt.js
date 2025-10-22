@@ -20,50 +20,49 @@ catch (e) {
 
 // Задание 2
 
-// function transfromJSON (jsonString) {
-//     const object = JSON.parse(jsonString);
+function transfromJSON (jsonString) {
+    
+    try {
+    
+    const object = JSON.parse(jsonString);
+    return object;
 
-//     if(isUndefined(object)) {
-//         throw new Error ('Не удалось преобразовать Json')
+    } catch (error) {
 
-//     }
-// }
+        console.log ('Ошибка', error.message);
+        return null;
 
-// try {
+    }
 
-//     console.log(transfromJSON(abc));
+}
 
-// } catch(error) {
-
-//     console.log('Ошибка:', error.message);
-
-// }
+console.log(transfromJSON('{name: "John", "age": 30}'))
 
 
 // Задание 3
 
-function checkAccess (age) {
+// function checkAccess (age) {
 
-    const number = parseInt(age);
+//     const number = parseInt(age);
 
-    if (isNaN(number)) {
+//     if (isNaN(number)) {
         
-        throw new Error('Некорректный ввод, ожидается число')
-    }
+//         throw new Error('Некорректный ввод, ожидается число')
+//     }
 
-    if (age < 18) {
+//     if (age < 18) {
 
-        throw new Error ('Доступ запрещен')
+//         throw new Error ('Доступ запрещен')
 
-    }
-}
+//     }  console.log('Доступ разрешен')
+// }
 
-try {
+// try {
 
-    console.log(checkAccess(17))
+//     console.log(checkAccess(17))
 
-} catch (e) {
+// } catch (e) {
 
-    console.log(e.message)
+//     console.log(e.message)
 
-}
+// }
